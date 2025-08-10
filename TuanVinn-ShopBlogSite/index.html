@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TuanVinn - ShopSite</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/TuanVinn-Icon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Navigasi Atas -->
+<nav class="navbar">
+  <button id="homeBtn" title="Beranda"><i class="fas fa-home"></i></button>
+  <button id="searchBtn" title="Penelusuran"><i class="fas fa-search"></i></button>
+  <button id="cartToggle" title="Keranjang">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count" class="cart-badge">0</span>
+  </button>
+
+</nav>
+
+<!-- Toggle Tema -->
+<div class="theme-toggle" id="theme-toggle">
+  <i class="fas fa-sun" id="themeIcon"></i>
+</div>
+
+<!-- Logo -->
+<div class="logo-container">
+  <img src="./assets/TuanVinn-Icon.png" alt="Logo TuanVinn" class="logo"/>
+</div>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-overlay">
+    <h1>TuanVinn - ShopSite</h1>
+    <input type="text" id="search" placeholder="Cari produk digital..."/>
+  </div>
+</header>
+
+<!-- Notifikasi Add to Cart -->
+<div id="cart-notification" class="cart-notif hidden">Produk dimasukkan ke keranjang!</div>
+<audio id="cart-sound" src="./assets/cart.mp3" preload="auto"></audio>
+
+<main>
+
+<!-- Overlay Keranjang -->
+<div id="cart-overlay" class="overlay hidden">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="toggleOverlay('cart-overlay')">&times;</span>
+    <h2>Keranjang Kamu</h2>
+    <div id="cart-list"></div>
+    <p><b>Total:</b> <span id="cart-total">Rp 0</span></p>
+    <select id="checkout-method" class="metode-select">
+      <option>DANA</option>
+      <option>OVO</option>
+      <option>GoPay</option>
+      <option>QRIS</option>
+      <option>Saweria</option>
+    </select>
+    <div class="checkout-buttons">
+      <button onclick="checkoutWA()">Checkout via WhatsApp</button>
+      <button onclick="checkoutTG()">Checkout via Telegram</button>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay Buy -->
+<div id="buy-overlay" class="overlay hidden">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="toggleOverlay('buy-overlay')">&times;</span>
+    <h2>Checkout Produk</h2>
+    <div id="buy-detail"></div>
+    <select id="buy-method" class="metode-select">
+      <option>DANA</option>
+      <option>OVO</option>
+      <option>GoPay</option>
+      <option>QRIS</option>
+      <option>Saweria</option>
+    </select>
+    <div class="checkout-buttons">
+      <button onclick="checkoutWA(true)">WhatsApp</button>
+      <button onclick="checkoutTG(true)">Telegram</button>
+    </div>
+  </div>
+</div>
+
+<!-- Grid Produk -->
+<section class="product-grid" id="product-grid"></section>
+
+<!-- Info Pembayaran -->
+<div class="checkout-section" id="checkout-section"></div>
+<div class="payment-section">
+  <h2>Metode Pembayaran</h2>
+  <div class="payments">
+    <p>DANA: <span class="copyable">Coming Soon</span></p>
+    <p>OVO: <span class="copyable">Coming Soon</span></p>
+    <p>GoPay: <span class="copyable">Coming Soon</span></p>
+    <p>Saweria: <span class="copyable">saweria.co/TuanVinn7</span></p>
+    <p>QRIS:</p>
+    <img src="./assets/Banner2.jpg" alt="QRIS" class="qris" />
+  </div>
+</div>
+
+</main>
+
+<!-- Karakter Alya -->
+<img src="./assets/TuanVinn-Icon.png" alt="alya" class="alya" id="alya"/>
+
+<!-- Footer -->
+<div class="footer-text">
+  <p style="margin-top: 1rem; font-size: 0.75rem;">© 2025 TuanVinn. All rights reserved.</p>
+</div>
+
+<!-- Script JS -->
+<script src="script.js"></script>
+<script>
+  document.getElementById("homeBtn").onclick = () => location.href = "/";
+  document.getElementById("searchBtn").onclick = () => document.getElementById("search").focus();
+  document.getElementById("cartToggle").onclick = () => toggleOverlay('cart-overlay');
+
+  // Theme toggle icon switch
+  const themeIcon = document.getElementById("themeIcon");
+  document.getElementById("theme-toggle").onclick = () => {
+    document.body.classList.toggle("dark");
+    themeIcon.classList.toggle("fa-sun");
+    themeIcon.classList.toggle("fa-moon");
+  };
+</script>
+
+</body>
+</html>

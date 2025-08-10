@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuanVinn - Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./TuanVinn-Icon.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <h1>TuanVinn - Assistant</h1>
+    <button class="theme-toggle" id="themeToggle">ðŸŒ™</button>
+  </header>
+
+  <div class="setup-screen" id="setupScreen">
+    <h2>Mulai Chat dengan TuanVinn - Assistant</h2>
+    <p>Masukkan nama Anda untuk mengobrol dengan TuanVinn - Assistant</p>
+    <input type="text" id="userName" placeholder="Nama Anda..." required />
+    <button class="btn" id="startChatBtn">Mulai Chat</button>
+  </div>
+
+  <div class="chat-container" id="chatContainer" style="display: none; height: 90vh; flex-direction: column;">
+    <div class="chat-controls">
+      <button class="btn" id="settingsBtn">Set Background</button>
+      <button class="btn" id="resetChatBtn">Reset Chat</button>
+      <button class="btn" id="downloadChatBtn">Download Chat</button>
+    </div>
+
+    <div class="settings-panel" id="settingsPanel">
+      <h3>Pengaturan Chat</h3>
+      <div class="bg-options">
+        <div class="bg-option selected" style="background-color: #f5f5f5;" data-bg="none"></div>
+        <div class="bg-option" style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2);" data-bg="linear-gradient(135deg, #f5f7fa, #c3cfe2)"></div>
+        <div class="bg-option" style="background: linear-gradient(to right, #ffefba, #ffffff);" data-bg="linear-gradient(to right, #ffefba, #ffffff)"></div>
+        <div class="bg-option" style="background: radial-gradient(circle, #84fab0 0%, #8fd3f4 100%);" data-bg="radial-gradient(circle, #84fab0 0%, #8fd3f4 100%)"></div>
+        <div class="bg-option" style="background: linear-gradient(to bottom, #e0c3fc 0%, #8ec5fc 100%);" data-bg="linear-gradient(to bottom, #e0c3fc 0%, #8ec5fc 100%)"></div>
+        <div class="bg-option" style="background: linear-gradient(to left, #ff9a9e, #fad0c4);" data-bg="linear-gradient(to left, #ff9a9e, #fad0c4)"></div>
+      </div>
+      <button class="btn upload-btn">
+        Upload Background
+        <input type="file" id="bgUpload" accept="image/*" />
+      </button>
+    </div>
+
+    <div class="chat-header">
+      <img id="chatCharacterAvatar" src="./profile.jpg" alt="TuanVinn - Assistant" />
+      <h2>TuanVinn - Assistant</h2>
+    </div>
+
+    <div class="chat-messages" id="chatMessages" style="flex-grow: 1; overflow-y: auto;"></div>
+
+    <div class="typing-indicator" id="typingIndicator">
+      <div class="typing-dots">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <div class="input-container">
+        <input type="text" id="userInput" placeholder="Ketik pesan Anda..." />
+      </div>
+      <div class="chat-buttons">
+        <button class="btn" id="sendBtn">Kirim</button>
+        <label class="btn upload-btn">
+          Kirim File
+          <input type="file" id="fileUpload" multiple />
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="kanjud.js"></script>
+  <script>
+    document.getElementById("startChatBtn").addEventListener("click", function () {
+      const name = document.getElementById("userName").value.trim();
+      if (name !== "") {
+        document.getElementById("setupScreen").style.display = "none";
+        document.getElementById("chatContainer").style.display = "flex";
+      }
+    });
+  </script>
+</body>
+</html>
