@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuanVinn - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+	.neon-card {
+    box-shadow: 0 0 15px #38bdf8, 0 0 30px #38bdf8, 0 0 45px #38bdf8;
+	}
+	.neon-text {
+    text-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    word-break: break-word;
+	}
+	header img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+	}
+    .neon-btn {
+      box-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8;
+      transition: all 0.3s ease;
+    }
+    .neon-btn:hover {
+      box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #0ea5e9;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Profile Card -->
+  <header class="flex flex-col items-center text-center py-10">
+    <img src="TuanVinn-Icon.png" alt="Profile" class="w-40 h-40 rounded-full border-4 border-sky-400 neon-card">
+    <h1 class="text-4xl font-bold mt-4 neon-text">TuanVinn</h1>
+    <p class="text-lg text-sky-300">Developer Kreatif | Web & Game | UI/UX Enthusiast</p>
+
+    <!-- Social Buttons -->
+    <div class="flex gap-4 mt-6">
+      <a href="#" class="px-4 py-2 rounded-lg bg-sky-500 text-white neon-btn">GitHub</a>
+      <a href="#" class="px-4 py-2 rounded-lg bg-purple-500 text-white neon-btn">Telegram</a>
+      <a href="#" class="px-4 py-2 rounded-lg bg-pink-500 text-white neon-btn">Instagram</a>
+    </div>
+  </header>
+  
+  <!-- About -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-semibold text-sky-400 mb-4 neon-text">About Me</h2>
+    <p class="text-lg leading-relaxed">
+      Halo, aku <span class="font-semibold">TuanVinn</span> — developer kreatif yang suka ngulik web, membuat game, dan bereksperimen dengan UI/UX unik. 
+      Paling betah ngoding sambil ngopi, mengutak-atik animasi, dan menciptakan proyek yang nyeleneh tapi keren.
+    </p>
+  </section>
+
+<!-- Cyber ID Card -->
+<section class="max-w-5xl mx-auto px-6 py-12">
+  <h2 class="text-2xl font-semibold text-sky-400 mb-6 neon-text">Cyber ID Card</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-slate-900 p-6 rounded-lg neon-card">
+      <p class="text-lg leading-relaxed">
+        KTP Digital <span class="font-semibold">TuanVinn</span> 
+      </p>
+
+      <a href="/ktpdigital" class="px-4 py-2 mt-4 inline-block rounded-lg bg-blue-500 text-white neon-btn">Lihat</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-sky-400 mb-6 neon-text">Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 p-6 rounded-lg neon-card">
+          <h3 class="text-lg font-bold mb-2 text-sky-300">Frontend</h3>
+          <p>HTML, CSS, JavaScript, Tailwind, React</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg neon-card">
+          <h3 class="text-lg font-bold mb-2 text-sky-300">Game Dev</h3>
+          <p>Phaser, p5.js, Canvas API</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg neon-card">
+          <h3 class="text-lg font-bold mb-2 text-sky-300">Backend & Tools</h3>
+          <p>Node.js, Express, Firebase</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg neon-card">
+          <h3 class="text-lg font-bold mb-2 text-sky-300">Lainnya</h3>
+          <p>API integration, Payment mockup, UI/UX polish</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-semibold text-sky-400 mb-6 neon-text">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 p-6 rounded-lg neon-card">
+        <h3 class="text-xl font-bold mb-2 text-sky-300">TuanVinn – ShopSite</h3>
+        <p class="mb-3">Website e-commerce modern dengan overlay cart, mock payment, dan desain responsif.</p>
+        <a href="#" class="text-sky-400 hover:underline">Repo</a> | <a href="#" class="text-sky-400 hover:underline">Demo</a>
+      </div>
+      <div class="bg-slate-900 p-6 rounded-lg neon-card">
+        <h3 class="text-xl font-bold mb-2 text-sky-300">Blue Archive Loli Fighter</h3>
+        <p class="mb-3">Game chibi fighter berbasis web, siap deploy di GitHub Pages.</p>
+        <a href="#" class="text-sky-400 hover:underline">Repo</a> | <a href="#" class="text-sky-400 hover:underline">Demo</a>
+      </div>
+      <div class="bg-slate-900 p-6 rounded-lg neon-card">
+        <h3 class="text-xl font-bold mb-2 text-sky-300">ChatGPT Clone UI</h3>
+        <p class="mb-3">Clone interface dan UX ChatGPT dengan client-only mode.</p>
+        <a href="#" class="text-sky-400 hover:underline">Repo</a> | <a href="#" class="text-sky-400 hover:underline">Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 border-t border-sky-700 mt-8">
+    <p class="text-sky-400">&copy; 2025 TuanVinn. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
